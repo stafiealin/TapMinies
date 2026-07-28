@@ -40,7 +40,7 @@ namespace TapMinies.UI
 
         void UpdateGold(long amount)
         {
-            goldText.text = $"Gold: {amount}";
+            goldText.text = $"Gold: {NumberFormat.Short(amount)}";
         }
 
         void UpdateEnemyHealth(EnemyController e)

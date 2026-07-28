@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hero_Assassin
   m_EditorClassIdentifier: Assembly-CSharp::TapMinies.Data.HeroData
   heroName: Assassin
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: d761f114398c6cf459ab3f2d7d0928d7, type: 3}
   unlockStage: 15
   baseDamage: 150
   damageGrowthPerLevel: 1.07

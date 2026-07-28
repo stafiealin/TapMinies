@@ -10,17 +10,11 @@ namespace TapMinies.UI
     {
         [SerializeField] private HeroManager heroManager;
         [SerializeField] private RectTransform rowContainer;
+        [Header("9-sliced skin for runtime-built rows")]
+        [SerializeField] private Sprite rowSprite;
+        [SerializeField] private Sprite buttonSprite;
 
         private readonly List<HeroRowView> rows = new List<HeroRowView>();
-
-        private static readonly Color[] Palette =
-        {
-            new Color(0.85f, 0.3f, 0.3f),
-            new Color(0.3f, 0.55f, 0.85f),
-            new Color(0.85f, 0.65f, 0.2f),
-            new Color(0.45f, 0.3f, 0.75f),
-            new Color(0.3f, 0.75f, 0.45f),
-        };
 
         void Awake()
         {
@@ -59,17 +53,24 @@ namespace TapMinies.UI
                 layoutElement.preferredHeight = 160;
                 layoutElement.minHeight = 160;
                 var bgImg = rowGo.AddComponent<Image>();
-                bgImg.color = new Color(1f, 1f, 1f, 0.06f);
+                bgImg.color = new Color(1f, 1f, 1f, 0.08f);
+                if (rowSprite != null)
+                {
+                    bgImg.sprite = rowSprite;
+                    bgImg.type = Image.Type.Sliced;
+                }
 
-                var swatchGo = new GameObject("Swatch", typeof(RectTransform));
-                swatchGo.transform.SetParent(rowGo.transform, false);
-                var swatchRt = swatchGo.GetComponent<RectTransform>();
-                swatchRt.anchorMin = new Vector2(0f, 0.5f);
-                swatchRt.anchorMax = new Vector2(0f, 0.5f);
-                swatchRt.anchoredPosition = new Vector2(90, 0);
-                swatchRt.sizeDelta = new Vector2(120, 120);
-                var swatchImg = swatchGo.AddComponent<Image>();
-                swatchImg.color = Palette[index % Palette.Length];
+                var portraitGo = new GameObject("Portrait", typeof(RectTransform));
+                portraitGo.transform.SetParent(rowGo.transform, false);
+                var portraitRt = portraitGo.GetComponent<RectTransform>();
+                portraitRt.anchorMin = new Vector2(0f, 0.5f);
+                portraitRt.anchorMax = new Vector2(0f, 0.5f);
+                portraitRt.anchoredPosition = new Vector2(90, 0);
+                portraitRt.sizeDelta = new Vector2(120, 120);
+                var portraitImg = portraitGo.AddComponent<Image>();
+                portraitImg.sprite = heroManager.GetHeroData(index).portrait;
+                portraitImg.preserveAspect = true;
+                portraitImg.raycastTarget = false;
 
                 var infoGo = new GameObject("Info", typeof(RectTransform));
                 infoGo.transform.SetParent(rowGo.transform, false);
@@ -92,6 +93,11 @@ namespace TapMinies.UI
                 btnRt.anchoredPosition = new Vector2(-130, 0);
                 btnRt.sizeDelta = new Vector2(220, 110);
                 var btnImg = btnGo.AddComponent<Image>();
+                if (buttonSprite != null)
+                {
+                    btnImg.sprite = buttonSprite;
+                    btnImg.type = Image.Type.Sliced;
+                }
                 var button = btnGo.AddComponent<Button>();
 
                 var btnTextGo = new GameObject("Label", typeof(RectTransform));
@@ -114,6 +120,7 @@ namespace TapMinies.UI
                     InfoText = infoText,
                     ActionText = actionText,
                     ActionImage = btnImg,
+                    PortraitImage = portraitImg,
                     Button = button
                 });
             }
@@ -134,17 +141,23 @@ namespace TapMinies.UI
                     row.ActionText.text = "Locked";
                     row.Button.interactable = false;
                     row.ActionImage.color = new Color(0.3f, 0.3f, 0.3f);
+                    // Silhouette the portrait so the player can see what they're working toward
+                    row.PortraitImage.color = new Color(0.12f, 0.12f, 0.14f, 0.85f);
                     continue;
                 }
+
+                row.PortraitImage.color = Color.white;
 
                 long damage = data.GetDamageAtLevel(level);
                 long cost = heroManager.GetUpgradeCost(i);
                 bool canAfford = GameManager.Instance.Currency.Gold >= cost;
 
                 row.InfoText.text = level > 0
-                    ? $"{data.heroName}  Lv.{level}\nDMG {damage}/s"
+                    ? $"{data.heroName}  Lv.{level}\nDMG {NumberFormat.Short(damage)}/s"
                     : $"{data.heroName}\nNot hired";
-                row.ActionText.text = level > 0 ? $"Upgrade\n{cost}g" : $"Hire\n{cost}g";
+                row.ActionText.text = level > 0
+                    ? $"Upgrade\n{NumberFormat.Short(cost)}g"
+                    : $"Hire\n{NumberFormat.Short(cost)}g";
                 row.Button.interactable = canAfford;
                 row.ActionImage.color = canAfford ? new Color(0.2f, 0.6f, 0.3f) : new Color(0.4f, 0.4f, 0.4f);
             }
@@ -155,6 +168,7 @@ namespace TapMinies.UI
             public Text InfoText;
             public Text ActionText;
             public Image ActionImage;
+            public Image PortraitImage;
             public Button Button;
         }
     }

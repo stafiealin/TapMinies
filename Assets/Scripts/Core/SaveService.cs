@@ -22,5 +22,10 @@ namespace TapMinies.Core
             string json = File.ReadAllText(SavePath);
             return JsonUtility.FromJson<SaveData>(json);
         }
+
+        public void Delete()
+        {
+            if (File.Exists(SavePath)) File.Delete(SavePath);
+        }
     }
 }

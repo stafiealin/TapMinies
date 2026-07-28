@@ -77,6 +77,8 @@ namespace TapMinies.Gameplay
             if (!GameManager.Instance.Currency.TrySpendGold(cost)) return false;
 
             heroLevels[index]++;
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlayUpgrade();
             OnHeroesChanged?.Invoke();
             return true;
         }

@@ -14,6 +14,13 @@ namespace TapMinies.Gameplay
         [SerializeField] private long baseGoldReward = 10;
         [SerializeField] private float goldGrowthPerStage = 1.12f;
 
+        [Header("Appearance")]
+        [Tooltip("Cycled by stage tier so progression is visible; index = (stage-1)/stagesPerTier.")]
+        [SerializeField] private Sprite[] enemyTierSprites;
+        [SerializeField] private Sprite bossSprite;
+        [SerializeField] private int stagesPerTier = 5;
+        [SerializeField] private UnityEngine.UI.Image enemyImage;
+
         [Header("Boss")]
         [SerializeField] private int bossStageInterval = 5;
         [SerializeField] private float bossHealthMultiplier = 5f;
@@ -93,8 +100,28 @@ namespace TapMinies.Gameplay
                 OnBossTimerChanged?.Invoke(remainingBossTime);
             }
 
+            ApplyEnemyAppearance();
             enemy.Initialize(health, gold);
             GameEvents.RaiseStageChanged(CurrentStage);
+        }
+
+        void ApplyEnemyAppearance()
+        {
+            if (enemyImage == null) return;
+
+            if (IsBossStage && bossSprite != null)
+            {
+                enemyImage.sprite = bossSprite;
+                enemyImage.rectTransform.sizeDelta = new Vector2(480, 480);
+                return;
+            }
+
+            if (enemyTierSprites != null && enemyTierSprites.Length > 0)
+            {
+                int tier = Mathf.Clamp((CurrentStage - 1) / Mathf.Max(1, stagesPerTier), 0, enemyTierSprites.Length - 1);
+                enemyImage.sprite = enemyTierSprites[tier];
+            }
+            enemyImage.rectTransform.sizeDelta = new Vector2(384, 384);
         }
     }
 }

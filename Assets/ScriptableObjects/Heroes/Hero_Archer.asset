@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hero_Archer
   m_EditorClassIdentifier: Assembly-CSharp::TapMinies.Data.HeroData
   heroName: Archer
-  portrait: {fileID: 0}
+  portrait: {fileID: 21300000, guid: 719686ab75c28454dae730060374d3dc, type: 3}
   unlockStage: 3
   baseDamage: 12
   damageGrowthPerLevel: 1.07
