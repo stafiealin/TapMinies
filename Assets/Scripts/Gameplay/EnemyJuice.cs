@@ -22,6 +22,11 @@ namespace TapMinies.Gameplay
         [SerializeField] private float punchRecovery = 9f;
         [SerializeField] private float flashRecovery = 7f;
 
+        [Header("Idle")]
+        [SerializeField] private float idleBobAmplitude = 6f;
+        [SerializeField] private float idleBobSpeed = 2.2f;
+        [SerializeField] private float idleScaleAmount = 0.025f;
+
         private EnemyController enemy;
         private RectTransform rect;
         private Vector2 restPosition;
@@ -82,17 +87,16 @@ namespace TapMinies.Gameplay
         {
             float dt = Time.deltaTime;
 
-            // Squash-and-stretch: scale up on hit, spring back.
+            // Idle breathing: a continuous gentle pulse the enemy always has, even at rest.
+            float idlePulse = 1f + Mathf.Sin(Time.time * idleBobSpeed * 1.3f) * idleScaleAmount;
+            float idleBobY = Mathf.Sin(Time.time * idleBobSpeed) * idleBobAmplitude;
+
+            // Squash-and-stretch on hit, layered on top of the idle pulse.
             if (punch > 0f)
-            {
                 punch = Mathf.Max(0f, punch - dt * punchRecovery);
-                float s = 1f + punchScale * punch;
-                transform.localScale = new Vector3(s, 1f + punchScale * punch * 0.6f, 1f);
-            }
-            else if (transform.localScale != Vector3.one)
-            {
-                transform.localScale = Vector3.one;
-            }
+            float punchX = 1f + punchScale * punch;
+            float punchY = 1f + punchScale * punch * 0.6f;
+            transform.localScale = new Vector3(idlePulse * punchX, idlePulse * punchY, 1f);
 
             // White flash on impact.
             if (enemyImage != null && flash > 0f)
@@ -101,17 +105,18 @@ namespace TapMinies.Gameplay
                 enemyImage.color = Color.Lerp(Color.white, new Color(1.6f, 1.6f, 1.6f), flash);
             }
 
-            // Positional shake, strongest on boss death.
+            // Positional shake on top of the idle bob, strongest on boss death.
+            Vector2 basePos = restPosition + new Vector2(0f, idleBobY);
             if (shake > 0f)
             {
                 shake = Mathf.Max(0f, shake - dt * 3.2f);
                 float mag = 26f * shake * shake;
-                rect.anchoredPosition = restPosition + new Vector2(
+                rect.anchoredPosition = basePos + new Vector2(
                     Random.Range(-mag, mag), Random.Range(-mag, mag));
             }
-            else if (rect.anchoredPosition != restPosition)
+            else
             {
-                rect.anchoredPosition = restPosition;
+                rect.anchoredPosition = basePos;
             }
         }
     }

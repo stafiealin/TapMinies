@@ -28,13 +28,20 @@ namespace TapMinies.UI
         {
             heroManager.OnHeroesChanged += RefreshVisibility;
             heroManager.OnHeroAttacked += HandleHeroAttacked;
-            RefreshVisibility();
         }
 
         void OnDisable()
         {
             heroManager.OnHeroesChanged -= RefreshVisibility;
             heroManager.OnHeroAttacked -= HandleHeroAttacked;
+        }
+
+        void Start()
+        {
+            // HeroManager's own Awake (which allocates its level array) isn't guaranteed to run
+            // before this object's OnEnable, so the first sync happens here instead - Unity does
+            // guarantee all Awake calls finish before any Start calls.
+            RefreshVisibility();
         }
 
         void BuildSlots()

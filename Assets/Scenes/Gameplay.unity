@@ -1697,11 +1697,13 @@ MonoBehaviour:
   baseGoldReward: 10
   goldGrowthPerStage: 1.12
   enemyTierSprites:
-  - {fileID: 21300000, guid: 49da26e6ee778b24b8d6ef8d8ba4552c, type: 3}
-  - {fileID: 21300000, guid: 31732249b72bdf141a663e69eeeb8e1c, type: 3}
-  - {fileID: 21300000, guid: 456e4bd6c6530c64fb14f599d07609e4, type: 3}
-  - {fileID: 21300000, guid: a6c378d7e4bc54a468773b900ec1de5b, type: 3}
-  bossSprite: {fileID: 21300000, guid: d52aa1c8ec116484aa74fc6f582bca9c, type: 3}
+  - {fileID: 6907022567179712644, guid: 518789987c0ebe74db067f73751f3cdc, type: 3}
+  - {fileID: 6848507392374248007, guid: f75f38914a2279346b0bbdd88ec016a5, type: 3}
+  - {fileID: 5735265423408754349, guid: f759c5a86d48aac4c9bac4901677e0fd, type: 3}
+  - {fileID: -6899945806428182898, guid: 5556b7fc17dcb5c4b8f58c7441b921bc, type: 3}
+  - {fileID: 6508023162149978209, guid: 15844da31dfc686478c57ee559984992, type: 3}
+  - {fileID: -2936035364203493313, guid: f6cf71f26dc46b04ab53e96f1d1ff4db, type: 3}
+  bossSprite: {fileID: -1365777423514487118, guid: 75e4477a3d5289a48827280b97bdde53, type: 3}
   stagesPerTier: 5
   enemyImage: {fileID: 1483077296}
   bossStageInterval: 5
@@ -2649,6 +2651,9 @@ MonoBehaviour:
   punchScale: 0.12
   punchRecovery: 9
   flashRecovery: 7
+  idleBobAmplitude: 6
+  idleBobSpeed: 2.2
+  idleScaleAmount: 0.025
 --- !u!1 &1520264945
 GameObject:
   m_ObjectHideFlags: 0
