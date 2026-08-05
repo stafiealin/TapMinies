@@ -13,8 +13,27 @@ MonoBehaviour:
   m_Name: Hero_SwordNovice
   m_EditorClassIdentifier: Assembly-CSharp::TapMinies.Data.HeroData
   heroName: Sword Novice
-  portrait: {fileID: 21300000, guid: a00b564960fcdbf40b921fbe3ed01ac9, type: 3}
+  portrait: {fileID: -42896894, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
   unlockStage: 1
+  idleFrames:
+  - {fileID: -42896894, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 95478254, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 1516966696, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 446232126, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  attackFrames:
+  - {fileID: -1754065894, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 1900196705, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: -539103205, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 83636813, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 35246320, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: -1084056185, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: -1723251435, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 346365668, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 587895494, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: -1701379061, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 1920455446, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  - {fileID: 30875106, guid: 3b42db65e7388324782fe5ecc8fee469, type: 3}
+  frameRate: 8
   baseDamage: 5
   damageGrowthPerLevel: 1.07
   baseCost: 15

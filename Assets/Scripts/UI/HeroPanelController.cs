@@ -68,9 +68,9 @@ namespace TapMinies.UI
                 portraitRt.anchoredPosition = new Vector2(90, 0);
                 portraitRt.sizeDelta = new Vector2(120, 120);
                 var portraitImg = portraitGo.AddComponent<Image>();
-                portraitImg.sprite = heroManager.GetHeroData(index).portrait;
                 portraitImg.preserveAspect = true;
                 portraitImg.raycastTarget = false;
+                portraitImg.sprite = heroManager.GetHeroData(index).portrait;
 
                 var infoGo = new GameObject("Info", typeof(RectTransform));
                 infoGo.transform.SetParent(rowGo.transform, false);

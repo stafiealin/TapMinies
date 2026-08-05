@@ -9,6 +9,11 @@ namespace TapMinies.Data
         public Sprite portrait;
         public int unlockStage = 1;
 
+        [Header("Animation States")]
+        public Sprite[] idleFrames;
+        public Sprite[] attackFrames;
+        public float frameRate = 8f;
+
         public long baseDamage = 5;
         public float damageGrowthPerLevel = 1.07f;
 
@@ -23,7 +28,7 @@ namespace TapMinies.Data
 
         public long GetUpgradeCost(int currentLevel)
         {
-            return (long)(baseCost * Mathf.Pow(costGrowthPerLevel, currentLevel));
+            return (long)(baseCost * Mathf.Pow(costGrowthPerLevel, currentLevel) / 10);
         }
     }
 }

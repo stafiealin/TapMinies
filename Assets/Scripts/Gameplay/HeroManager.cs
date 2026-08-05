@@ -15,6 +15,7 @@ namespace TapMinies.Gameplay
         private float tickAccumulator;
 
         public event Action OnHeroesChanged;
+        public event Action<int> OnHeroAttacked;
 
         public int HeroCount => heroRoster.Length;
 
@@ -43,6 +44,7 @@ namespace TapMinies.Gameplay
                 if (heroLevels[i] > 0)
                 {
                     totalDamage += heroRoster[i].GetDamageAtLevel(heroLevels[i]);
+                    OnHeroAttacked?.Invoke(i);
                 }
             }
 
