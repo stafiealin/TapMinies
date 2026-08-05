@@ -13,8 +13,27 @@ MonoBehaviour:
   m_Name: Hero_FireMage
   m_EditorClassIdentifier: Assembly-CSharp::TapMinies.Data.HeroData
   heroName: Fire Mage
-  portrait: {fileID: 21300000, guid: 8ccfa6ef007fa044d805fa6e6d121225, type: 3}
+  portrait: {fileID: 11934885, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
   unlockStage: 6
+  idleFrames:
+  - {fileID: 11934885, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: 1435953795, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: -1993951825, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: 2056407557, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  attackFrames:
+  - {fileID: -1023749666, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: -2037939675, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: -327814099, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: 2006399952, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: 1817208687, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: 239588158, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: -1114347194, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: 1848575184, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: 480001875, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: -1616393460, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: -1058184751, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  - {fileID: -643001472, guid: c5bd70d8b41ba4f4c97e0f2982e27474, type: 3}
+  frameRate: 8
   baseDamage: 30
   damageGrowthPerLevel: 1.07
   baseCost: 250

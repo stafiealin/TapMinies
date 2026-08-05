@@ -13,8 +13,27 @@ MonoBehaviour:
   m_Name: Hero_Assassin
   m_EditorClassIdentifier: Assembly-CSharp::TapMinies.Data.HeroData
   heroName: Assassin
-  portrait: {fileID: 21300000, guid: d761f114398c6cf459ab3f2d7d0928d7, type: 3}
+  portrait: {fileID: -1581723203, guid: 5887302abc824b04bbff5305083daa35, type: 3}
   unlockStage: 15
+  idleFrames:
+  - {fileID: -1581723203, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: 791662269, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: -2053619759, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: -46572028, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  attackFrames:
+  - {fileID: 436259134, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: 389275239, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: 1949022010, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: -722700413, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: 2088037110, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: -505093762, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: 1241144496, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: -1551463494, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: 2022777251, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: 1069737471, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: -408848526, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  - {fileID: 1464256893, guid: 5887302abc824b04bbff5305083daa35, type: 3}
+  frameRate: 8
   baseDamage: 150
   damageGrowthPerLevel: 1.07
   baseCost: 3000

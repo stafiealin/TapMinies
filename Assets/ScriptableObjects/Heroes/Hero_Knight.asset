@@ -13,8 +13,27 @@ MonoBehaviour:
   m_Name: Hero_Knight
   m_EditorClassIdentifier: Assembly-CSharp::TapMinies.Data.HeroData
   heroName: Knight
-  portrait: {fileID: 21300000, guid: 4641c561423ad564ab93baad8372611f, type: 3}
+  portrait: {fileID: 1013548000, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
   unlockStage: 10
+  idleFrames:
+  - {fileID: 1013548000, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: -176711702, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: -1620431584, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: -1429077780, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  attackFrames:
+  - {fileID: 1775694499, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: 1355028912, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: -1528484348, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: 1589502276, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: 773383792, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: 1635054675, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: 310869256, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: 893636987, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: -1615487325, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: -1379234848, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: 1941022791, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  - {fileID: 482790929, guid: 9c4737e57d1a2d84895ea68e14218d72, type: 3}
+  frameRate: 8
   baseDamage: 70
   damageGrowthPerLevel: 1.07
   baseCost: 900

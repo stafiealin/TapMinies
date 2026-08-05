@@ -13,8 +13,27 @@ MonoBehaviour:
   m_Name: Hero_Archer
   m_EditorClassIdentifier: Assembly-CSharp::TapMinies.Data.HeroData
   heroName: Archer
-  portrait: {fileID: 21300000, guid: 719686ab75c28454dae730060374d3dc, type: 3}
+  portrait: {fileID: 1126697653, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
   unlockStage: 3
+  idleFrames:
+  - {fileID: 1126697653, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: 656200576, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: -1625093512, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: 1461245451, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  attackFrames:
+  - {fileID: 1819104739, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: 1374002861, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: 1208145020, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: -1769561831, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: -721339749, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: -2046195015, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: 1895454624, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: 583158355, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: 1543289121, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: 1483519213, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: -1321316189, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  - {fileID: 658761010, guid: e2460d3a20fe3024da95a4fdb7a96b88, type: 3}
+  frameRate: 8
   baseDamage: 12
   damageGrowthPerLevel: 1.07
   baseCost: 60
